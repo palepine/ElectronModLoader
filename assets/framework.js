@@ -1,3 +1,16 @@
+/*
+  ElectronModLoader Copyright (C) 2026 palepine
+
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+*/
 (
 
 () =>
@@ -25,11 +38,11 @@
     ready: false
   };
 
-  const log = (...values) => console.log( '[ElectronMods]', ...values );
+  const log = (...values) => console.log( '[Mods]', ...values );
   
   const report = (label, error) =>
   {
-    console.error( `[ElectronMods] ${label}`, error );
+    console.error( `[Mods] ${label}`, error );
     toast( `${label}: ${error?.message || error}`, 'error' );
   };
 
@@ -356,12 +369,12 @@
     const panel = element( 'section', 'eml-panel' );
 
     const header = element( 'header', 'eml-header' );
-    header.append( element( 'span', 'eml-brand', 'Electron Mods' ) );
+    header.append( element( 'span', 'eml-brand', 'EMods' ) );
     header.append( element( 'span', 'eml-version', `v${FRAMEWORK_VERSION}` ) );
     header.append( element( 'span', 'eml-spacer' ) );
     header.append( element( 'kbd', 'eml-key', 'F1' ) );
 
-    const close = element('button', 'eml-close', '×' );
+    const close = element('button', 'eml-close', 'x' );
     close.type = 'button';
     close.title = 'Close';
     close.addEventListener( 'click', () => setVisible(false) );
@@ -373,7 +386,7 @@
     const status = element( 'span', '', 'Loading mods…' );
     footer.append( status);
     footer.append( element( 'span', 'eml-spacer' ) );
-    footer.append( element( 'span', '', 'Source-free CDP injection' ) );
+    footer.append( element( 'span', '', 'CDP-Injection Tool. Under GNU v3.0' ) );
 
     const toastBox = element( 'div', 'eml-toastbox' );
 
